@@ -1,0 +1,520 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.8rem;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 450px;
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.converter-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.time-inputs-row {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+    max-width: 100%;
+}
+
+.time-inputs-row .time-input {
+    flex: 1;
+    max-width: calc(50% - 0.2rem);
+}
+
+.input-section, .country-section, .result-section {
+    background: rgba(248, 250, 252, 0.6);
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    backdrop-filter: blur(8px);
+    margin-bottom: 0.3rem;
+}
+
+.input-section:hover, .country-section:hover {
+    background: rgba(248, 250, 252, 0.7);
+    transform: translateY(-2px);
+}
+
+.time-input {
+    margin-bottom: 0.8rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.3rem;
+    height: 32px;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.convert-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    margin: 0.2rem auto;
+    max-width: 140px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.convert-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+#result {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0.2rem 0;
+    font-weight: 500;
+}
+
+optgroup {
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+option {
+    font-weight: normal;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+select {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+select option:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.country-section {
+    background: rgba(248, 250, 252, 0.6);
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    backdrop-filter: blur(8px);
+    margin-bottom: 0.3rem;
+}
+
+.country-section select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.3rem 0.6rem;
+    height: 32px;
+    font-size: 0.9rem;
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.country-section select option {
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+.country-section select optgroup {
+    font-size: 1rem;
+    padding: 8px 0;
+}
+
+.country-section select:hover {
+    border-color: var(--primary-color);
+}
+
+/* 添加响应式设计 */
+@media (max-width: 640px) {
+    body {
+        /* 确保背景图片在移动端也能正确显示 */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b') no-repeat center center fixed;
+        background-size: cover;
+        padding: 1rem 0;
+        min-height: 100%;
+        height: auto;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.6rem;
+        margin: 0.4rem;
+        width: calc(100% - 1.2rem);
+        max-width: none;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .converter-box {
+        gap: 0.6rem;
+    }
+
+    .time-inputs-row {
+        gap: 0.6rem;
+    }
+
+    .input-section, .country-section, .result-section {
+        background: rgba(248, 250, 252, 0.5);
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+
+    .time-input {
+        margin-bottom: 0.6rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+        margin-bottom: 0.2rem;
+    }
+
+    input, select, .country-section select {
+        height: 32px;
+        padding: 0.3rem;
+        font-size: 0.85rem;
+    }
+
+    .convert-btn {
+        height: 32px;
+        max-width: 140px;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    #result {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    select {
+        max-height: 200px;
+    }
+
+    .country-section select {
+        height: 42px;
+        padding: 0.6rem;
+    }
+
+    .time-inputs-row .time-input {
+        max-width: calc(50% - 0.2rem);
+    }
+}
+
+/* 特小屏幕适配 (iPhone SE 等) */
+@media (max-width: 375px) {
+    body {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.65);
+        padding: 0.5rem;
+        margin: 0.3rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .input-section, .country-section, .result-section {
+        padding: 0.4rem;
+    }
+
+    input, select, .convert-btn {
+        height: 36px;
+    }
+
+    .time-inputs-row {
+        gap: 0.6rem;
+    }
+
+    .convert-btn {
+        height: 28px;
+        max-width: 120px;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .country-section select {
+        height: 40px;
+        padding: 0.5rem;
+    }
+}
+
+/* 处理横屏模式 */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 0.5rem 0;
+        height: auto;
+        min-height: 100%;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.7);
+        margin: 0.5rem auto;
+        max-width: 90%;
+    }
+
+    .converter-box {
+        gap: 0.6rem;
+    }
+
+    .input-section, .country-section, .result-section {
+        padding: 0.6rem;
+    }
+
+    select {
+        max-height: 150px;
+    }
+}
+
+/* 确保在 iOS Safari 上正确显示 */
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
+
+    input, select {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    select {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        padding-right: 2rem;
+    }
+}
+
+/* 优化触摸交互 */
+@media (hover: none) {
+    .input-section:hover, 
+    .country-section:hover {
+        transform: none;
+    }
+
+    .convert-btn:active {
+        transform: scale(0.98);
+    }
+
+    input, select, .convert-btn {
+        touch-action: manipulation;
+    }
+}
+
+/* 添加滚动条样式 */
+select::-webkit-scrollbar {
+    width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+    background: rgba(248, 250, 252, 0.8);
+    border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+.schedule-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.timezone-input {
+    margin-bottom: 0.3rem;
+}
+
+.timezone-input select {
+    width: 100%;
+}
+
+/* 调整时间输入框 */
+.time-input input[type="time"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+}
+
+/* 时间选择器样式 */
+.time-select-container {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.time-select {
+    padding: 0.3rem;
+    height: 32px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+}
+
+.hour-select {
+    width: 4rem;
+}
+
+.minute-select {
+    width: 4rem;
+}
+
+.time-separator {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: 0 0.1rem;
+}
+
+/* 确保下拉框在移动端也能正常显示 */
+@media (max-width: 640px) {
+    .time-select {
+        padding: 0.2rem;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .hour-select, .minute-select {
+        width: 3.5rem;
+    }
+}
+
+.language-switch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+    .language-switch {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+} 
