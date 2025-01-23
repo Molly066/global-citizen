@@ -147,27 +147,29 @@ input:focus, select:focus {
 }
 
 optgroup {
+    padding: 0.5rem 0;
     font-weight: 600;
-    color: var(--text-primary);
     background-color: var(--bg-secondary);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
 }
 
 option {
-    font-weight: normal;
-    padding: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin: 0.2rem 0;
 }
 
 select {
     max-height: 250px;
     overflow-y: auto;
+    padding: 0.5rem;
 }
 
 select option:hover {
     background-color: rgba(99, 102, 241, 0.1);
+}
+
+#timezone option {
+    padding: 0.4rem;
+    margin: 0.1rem 0;
 }
 
 .country-section {
@@ -282,9 +284,12 @@ select option:hover {
         max-height: 200px;
     }
 
+    select option {
+        padding: 0.4rem;
+    }
+
     .country-section select {
-        height: 42px;
-        padding: 0.6rem;
+        font-size: 0.9rem;
     }
 
     .time-inputs-row .time-input {

@@ -261,6 +261,13 @@ function switchLanguage(lang) {
     if (document.getElementById('result').textContent) {
         convertTime();
     }
+
+    // 更新选择器的样式
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => {
+        select.style.direction = lang === 'zh' ? 'ltr' : 'ltr';
+        select.style.textAlign = lang === 'zh' ? 'left' : 'left';
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
