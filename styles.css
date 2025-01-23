@@ -158,7 +158,7 @@ option {
 }
 
 select {
-    max-height: 250px;
+    max-height: 300px;
     overflow-y: auto;
     padding: 0.5rem;
 }
@@ -168,8 +168,9 @@ select option:hover {
 }
 
 #timezone option {
-    padding: 0.4rem;
-    margin: 0.1rem 0;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .country-section {
@@ -294,6 +295,15 @@ select option:hover {
 
     .time-inputs-row .time-input {
         max-width: calc(50% - 0.2rem);
+    }
+
+    .timezone-input select {
+        height: 36px;
+        padding: 0.4rem;
+    }
+    
+    #timezone option {
+        padding: 0.5rem;
     }
 }
 
@@ -431,7 +441,10 @@ select::-webkit-scrollbar-thumb:hover {
 }
 
 .timezone-input select {
-    width: 100%;
+    height: 38px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
 }
 
 /* 调整时间输入框 */
