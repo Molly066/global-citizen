@@ -114,7 +114,20 @@ const translations = {
             Lebanon: "Lebanon",
             Qatar: "Qatar",
             Oman: "Oman",
-            Bahrain: "Bahrain"
+            Bahrain: "Bahrain",
+            "USA-Eastern": "USA - Eastern",
+            "USA-Central": "USA - Central",
+            "USA-Mountain": "USA - Mountain",
+            "USA-Pacific": "USA - Pacific",
+            "USA-Hawaii": "USA - Hawaii",
+            "USA-Alaska": "USA - Alaska",
+            "Canada-Eastern": "Canada - Eastern",
+            "Canada-Central": "Canada - Central",
+            "Canada-Mountain": "Canada - Mountain",
+            "Canada-Pacific": "Canada - Pacific",
+            "Mexico-Central": "Mexico - Central",
+            "Mexico-Mountain": "Mexico - Mountain",
+            "Mexico-Pacific": "Mexico - Pacific"
         }
     },
     zh: {
@@ -208,7 +221,20 @@ const translations = {
             Lebanon: "黎巴嫩",
             Qatar: "卡塔尔",
             Oman: "阿曼",
-            Bahrain: "巴林"
+            Bahrain: "巴林",
+            "USA-Eastern": "美国 - 东部",
+            "USA-Central": "美国 - 中部",
+            "USA-Mountain": "美国 - 山地",
+            "USA-Pacific": "美国 - 太平洋",
+            "USA-Hawaii": "美国 - 夏威夷",
+            "USA-Alaska": "美国 - 阿拉斯加",
+            "Canada-Eastern": "加拿大 - 东部",
+            "Canada-Central": "加拿大 - 中部",
+            "Canada-Mountain": "加拿大 - 山地",
+            "Canada-Pacific": "加拿大 - 太平洋",
+            "Mexico-Central": "墨西哥 - 中部",
+            "Mexico-Mountain": "墨西哥 - 山地",
+            "Mexico-Pacific": "墨西哥 - 太平洋"
         }
     }
 };
