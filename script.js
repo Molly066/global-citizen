@@ -215,6 +215,18 @@ const translations = {
 
 let currentLang = 'en';
 
+Object.keys(translations.en.countries).forEach(countryKey => {
+    if (!translations.zh.countries[countryKey]) {
+        console.warn(`Missing Chinese translation for: ${countryKey}`);
+    }
+});
+
+Object.keys(translations.zh.countries).forEach(countryKey => {
+    if (!translations.en.countries[countryKey]) {
+        console.warn(`Missing English translation for: ${countryKey}`);
+    }
+});
+
 // 语言切换函数
 function switchLanguage(lang) {
     currentLang = lang;
@@ -253,9 +265,16 @@ function switchLanguage(lang) {
             const utcInfo = option.getAttribute('data-utc-info');
             const summer = option.getAttribute('data-summer') === 'true';
             const countryName = t.countries[countryKey];
-            option.textContent = `${countryName} ${utcInfo}${summer ? ' - ' + (lang === 'zh' ? '夏令时' : 'Summer') : ''}`;
+            if (countryName) {
+                option.textContent = `${countryName} ${utcInfo}${summer ? ' - ' + (lang === 'zh' ? '夏令时' : 'Summer') : ''}`;
+            } else {
+                // 如果国家名称未找到，隐藏该选项
+                option.style.display = 'none';
+            }
         }
     });
+    
+
 
     // 如果结果已存在，重新转换以更新语言
     if (document.getElementById('result').textContent) {
@@ -292,7 +311,17 @@ document.addEventListener('DOMContentLoaded', function() {
             select.appendChild(minuteOption.cloneNode(true));
         });
     }
-
+    const countrySelect = document.getElementById('countrySelect');
+    const enCountries = Object.keys(translations.en.countries);
+    
+    // 确保每个国家都在下拉列表中
+    enCountries.forEach(countryKey => {
+        const exists = Array.from(countrySelect.options).some(option => option.getAttribute('data-country-key') === countryKey);
+        if (!exists) {
+            console.warn(`Missing country in dropdown: ${countryKey}`);
+        }
+    });
+    
     // 初始化语言
     switchLanguage('en');
 });
