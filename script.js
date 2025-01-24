@@ -127,7 +127,15 @@ const translations = {
             "Canada-Pacific": "Canada - Pacific",
             "Mexico-Central": "Mexico - Central",
             "Mexico-Mountain": "Mexico - Mountain",
-            "Mexico-Pacific": "Mexico - Pacific"
+            "Mexico-Pacific": "Mexico - Pacific",
+            "Brunei": "Brunei",
+            "Macau": "Macau",
+            "Maldives": "Maldives",
+            "TimorLeste": "Timor-Leste",
+            "Bhutan": "Bhutan",
+            "Vanuatu": "Vanuatu",
+            "Romania": "Romania",
+            "Ireland": "Ireland"
         }
     },
     zh: {
@@ -234,7 +242,15 @@ const translations = {
             "Canada-Pacific": "加拿大 - 太平洋",
             "Mexico-Central": "墨西哥 - 中部",
             "Mexico-Mountain": "墨西哥 - 山地",
-            "Mexico-Pacific": "墨西哥 - 太平洋"
+            "Mexico-Pacific": "墨西哥 - 太平洋",
+            "Brunei": "文莱",
+            "Macau": "澳门",
+            "Maldives": "马尔代夫",
+            "TimorLeste": "东帝汶",
+            "Bhutan": "不丹",
+            "Vanuatu": "瓦努阿图",
+            "Romania": "罗马尼亚",
+            "Ireland": "爱尔兰"
         }
     }
 };
