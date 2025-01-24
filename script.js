@@ -316,6 +316,24 @@ function switchLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // 添加缓存控制头
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+    
+    // 清除浏览器缓存
+    if (window.caches) {
+        caches.keys().then(function(names) {
+            for (let name of names) {
+                caches.delete(name);
+            }
+        });
+    }
+    
     // 初始化小时选择器
     const hourSelects = document.querySelectorAll('.hour-select');
     for (let i = 0; i <= 23; i++) {
